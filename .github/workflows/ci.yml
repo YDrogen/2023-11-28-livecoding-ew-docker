@@ -27,7 +27,7 @@ jobs:
         with:
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: ${{ secrets.DOCKERHUB_REPO }}:latest
+          tags: ${{ secrets.DOCKERHUB_REPO }}:latest,${{ secrets.DOCKERHUB_REPO }}:${{ GITHUB.SHA }}
 
       - name: Image digest
         run: echo ${{ steps.build.outputs.digest }}
